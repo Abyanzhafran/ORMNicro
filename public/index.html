@@ -1,10 +1,9 @@
 <!doctype html>
-<html class="scroll-smooth">
+<html>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -27,10 +26,10 @@
           </a>
           <div
             class="flex flex-col p-6 md:px-0 md:justify-end bg-gray-50 md:bg-green-200 md:flex-row md:gap-4 rounded-b-lg">
-            <a href="#home" class="py-2 md:py-0">Home</a>
-            <a href="#product" class="py-2 md:py-0">Product</a>
-            <a href="#feature" class="py-2 md:py-0">Features</a>
-            <a href="#contact" class="py-2 md:py-0">Contact</a>
+            <a href="#home" class="py-2 md:py-0" @click="showMenu = !showMenu">Home</a>
+            <a href="#feature" class="py-2 md:py-0" @click="showMenu = !showMenu">Features</a>
+            <a href="#product" class="py-2 md:py-0" @click="showMenu = !showMenu">Product</a>
+            <a href="#contact" class="py-2 md:py-0" @click="showMenu = !showMenu">Contact</a>
           </div>
         </div>
       </div>
@@ -64,11 +63,38 @@
       </div>
     </div>
   </section>
+  <section class="mx-6 py-24 md:px-0 tails-selected-element" id="feature">
+    <div class="container items-center max-w-5xl px-8 mx-auto xl:px-5">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-14 md:gap-20 sm:-mx-3">
+        <div class="flex justify-center w-full md:w-1/2">
+          <img src="assets/iot_tool.png">
+        </div>
+        <div class="flex flex-col gap-6 w-full md:w-1/2">
+          <h1 class="relative text-4xl font-bold tracking-tight sm:text-5xl">ORMNicro tools</h1>
+          <span class="text-2xl">This tool can treat waste using microorganisms-4 and can produce products such as
+            compost and maggot</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="mx-6 py-24 md:px-0 tails-selected-element">
+    <div class="container items-center max-w-5xl px-8 mx-auto xl:px-5">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-14 md:gap-20 sm:-mx-3">
+        <div class="flex flex-col gap-6 w-full md:w-1/2">
+          <h1 class="relative text-4xl font-bold tracking-tight sm:text-5xl">ORMNicro app</h1>
+          <span class="text-2xl">This application is used for real-time monitoring of ORNMicro tools</span>
+        </div>
+        <div class="flex justify-center w-full md:w-2/5">
+          <img src="assets/app-crop.png">
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="mx-6 py-24 md:px-0 tails-selected-element" id="product">
     <div class="container items-center max-w-5xl px-8 mx-auto xl:px-5">
       <div class="max-w-7xl tails-selected-element pb-16">
         <div class="flex justify-center w-full mx-auto">
-          <h2 class="relative text-4xl font-extrabold tracking-tight sm:text-5xl">Our Product</h2>
+          <h2 class="relative text-4xl font-extrabold tracking-tight sm:text-5xl">The Product</h2>
         </div>
       </div>
       <div class="flex flex-col md:flex-row items-center justify-center gap-10 sm:-mx-3">
@@ -81,22 +107,13 @@
               <a href="#">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Pupuk Kompos</h5>
               </a>
-              <p class="mb-6 font-normal text-gray-700 line-clamp-2">Kompos merupakan sisa bahan organik yang berasal
-                dari tanaman,
-                hewan, dan limbah organik yang telah mengalami proses
-                dekomposisi atau fermentasi. Jenis tanaman yang sering digunakan untuk kompos di antaranya jerami</p>
-              <button type="button"
+              <p class="mb-8 font-normal text-gray-700 line-clamp-2">Compost is organic residue from plants, animals,
+                and organic waste that has undergone a decomposition or fermentation
+                process. Types of plants that are often used for compost include straw</p>
+              <a href="https://id.wikipedia.org/wiki/Pupuk_organik"
                 class="text-white bg-green-500 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
-                <div class="flex">
-                  <span>Read more</span>
-                  <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-              </button>
+                Read more
+              </a>
             </div>
           </div>
         </div>
@@ -110,114 +127,16 @@
               <a href="#">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Maggot</h5>
               </a>
-              <p class="mb-6 font-normal text-gray-700">Belatung atau bernga/berenga atau dalam bahasa Inggris: Maggot
-                adalah larva dari lalat Tempayak ini biasa ditemukan pada
-                barang-barang yang membusuk seperti bangkai, buah, atau sayur-mayur yang rusak</p>
-              <button type="button"
+              <p class="mb-8 font-normal text-gray-700 line-clamp-2">Maggots or bernga/berenga or in the language
+                English: Maggot are the larvae of the magpie fly, which is commonly found in rotting items such as
+                carrion, damaged fruit or vegetables</p>
+              <a href="https://id.wikipedia.org/wiki/Belatung"
                 class="text-white bg-green-500 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
-                <div class="flex">
-                  <span>Read more</span>
-                  <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-              </button>
+                Read more
+              </a>
             </div>
           </div>
 
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="feature">
-    <div class=" flex flex-col py-16 px-6 md:px-8 gap-14">
-      <div class="max-w-7xl tails-selected-element">
-        <div class="w-full mx-auto text-left md:text-center">
-          <h2
-            class="mb-6 text-4xl font-extrabold leading-none max-w-5xl mx-auto tracking-normal text-gray-900 md:text-6xl lg:text-6xl md:tracking-tight">
-            Our <span
-              class="w-full text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 lg:inline">
-              Excellence and Originality
-            </span> for your needs
-          </h2>
-        </div>
-      </div>
-      <!-- card component -->
-      <div class="flex flex-wrap px-4 items-center justify-center gap-6">
-        <div class="w-full w-80 rounded-lg bg-green-200 px-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mt-8 h-16 w-16 text-green-400" viewBox="0 0 20 20"
-            fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-              clip-rule="evenodd" />
-          </svg>
-          <h1 class="mt-2 text-center text-2xl font-bold text-gray-500">Success</h1>
-          <p class="my-4 text-center text-sm text-gray-500">Woah, successfully completed 3/5 Tasks lorem ipsum dolor
-            lorem
-            ipsum dolor lorem ipsum dolor</p>
-        </div>
-        <div class="w-full w-80 rounded-lg bg-green-200 px-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mt-8 h-16 w-16 text-green-400" viewBox="0 0 20 20"
-            fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-              clip-rule="evenodd" />
-          </svg>
-          <h1 class="mt-2 text-center text-2xl font-bold text-gray-500">Success</h1>
-          <p class="my-4 text-center text-sm text-gray-500">Woah, successfully completed 3/5 Tasks lorem ipsum dolor
-            lorem
-            ipsum dolor lorem ipsum dolor</p>
-        </div>
-        <div class="w-full w-80 rounded-lg bg-green-200 px-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mt-8 h-16 w-16 text-green-400" viewBox="0 0 20 20"
-            fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-              clip-rule="evenodd" />
-          </svg>
-          <h1 class="mt-2 text-center text-2xl font-bold text-gray-500">Success</h1>
-          <p class="my-4 text-center text-sm text-gray-500">Woah, successfully completed 3/5 Tasks lorem ipsum dolor
-            lorem
-            ipsum dolor lorem ipsum dolor</p>
-        </div>
-        <div class="w-full w-80 rounded-lg bg-green-200 px-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mt-8 h-16 w-16 text-green-400" viewBox="0 0 20 20"
-            fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-              clip-rule="evenodd" />
-          </svg>
-          <h1 class="mt-2 text-center text-2xl font-bold text-gray-500">Success</h1>
-          <p class="my-4 text-center text-sm text-gray-500">Woah, successfully completed 3/5 Tasks lorem ipsum dolor
-            lorem
-            ipsum dolor lorem ipsum dolor</p>
-        </div>
-        <div class="w-full w-80 rounded-lg bg-green-200 px-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mt-8 h-16 w-16 text-green-400" viewBox="0 0 20 20"
-            fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-              clip-rule="evenodd" />
-          </svg>
-          <h1 class="mt-2 text-center text-2xl font-bold text-gray-500">Success</h1>
-          <p class="my-4 text-center text-sm text-gray-500">Woah, successfully completed 3/5 Tasks lorem ipsum dolor
-            lorem
-            ipsum dolor lorem ipsum dolor</p>
-        </div>
-        <div class="w-full w-80 rounded-lg bg-green-200 px-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mt-8 h-16 w-16 text-green-400" viewBox="0 0 20 20"
-            fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-              clip-rule="evenodd" />
-          </svg>
-          <h1 class="mt-2 text-center text-2xl font-bold text-gray-500">Success</h1>
-          <p class="my-4 text-center text-sm text-gray-500">Woah, successfully completed 3/5 Tasks lorem ipsum dolor
-            lorem
-            ipsum dolor lorem ipsum dolor</p>
         </div>
       </div>
     </div>
@@ -417,7 +336,7 @@
 
         <div class="flex flex-col items-center justify-center p-10">
           <img class="w-32 mb-6 rounded-full" src="assets/akhdan_zaim.png">
-          <h2 class="text-lg font-medium">AKhdan Zaim</h2>
+          <h2 class="text-lg font-medium">Akhdan Zaim</h2>
           <p class="font-medium text-blue-500">Electronics and IoT</p>
         </div>
 
@@ -479,122 +398,8 @@
       </div>
     </div>
   </section>
-  <!-- <section class="mx-6 py-24 bg-white md:px-0 tails-selected-element">
-    <div class="container items-center max-w-5xl px-8 mx-auto xl:px-5">
-      <div class="flex flex-col md:flex-row items-center justify-center gap-14 md:gap-20 sm:-mx-3">
-        <div class="flex justify-center w-full md:w-1/2">
-          <img src="assets/img-square.PNG">
-        </div>
-        <div class="flex flex-col gap-6 w-full md:w-1/2">
-          <h1
-            class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
-            <span class="block xl:inline">Beautiful Pages to something</span>
-          </h1>
-          <ul>
-            <li class="flex items-center text-2xl">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd"
-                  d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span>Lorem ipsum dolor sit amet</span>
-            </li>
-            <li class="flex items-center text-2xl">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd"
-                  d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span>Lorem ipsum dolor sit amet</span>
-            </li>
-            <li class="flex items-center text-2xl">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd"
-                  d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span>Lorem ipsum dolor sit amet</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- <section class="mx-6 py-24 bg-white md:px-0 tails-selected-element">
-    <div class="container items-center max-w-5xl px-8 mx-auto xl:px-5">
-      <div class="flex flex-col md:flex-row items-center justify-center gap-14 md:gap-20 sm:-mx-3">
-        <div class="flex flex-col gap-6 w-full md:w-1/2">
-          <h1
-            class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
-            <span class="block xl:inline">Beautiful Pages to something</span>
-          </h1>
-          <ul>
-            <li class="flex items-center text-2xl">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd"
-                  d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span>Lorem ipsum dolor sit amet</span>
-            </li>
-            <li class="flex items-center text-2xl">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd"
-                  d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span>Lorem ipsum dolor sit amet</span>
-            </li>
-            <li class="flex items-center text-2xl">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd"
-                  d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span>Lorem ipsum dolor sit amet</span>
-            </li>
-          </ul>
-        </div>
-        <div class="flex justify-center w-full md:w-1/2">
-          <img src="assets/img-square.PNG">
-        </div>
-      </div>
-    </div>
-  </section> -->
   <footer>
     <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 tails-selected-element">
-      <nav class="flex flex-wrap justify-center -mx-5 -my-2">
-        <div class="px-5 py-2">
-          <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-            About
-          </a>
-        </div>
-        <div class="px-5 py-2">
-          <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-            Blog
-          </a>
-        </div>
-        <div class="px-5 py-2">
-          <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-            Team
-          </a>
-        </div>
-        <div class="px-5 py-2">
-          <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-            Pricing
-          </a>
-        </div>
-        <div class="px-5 py-2">
-          <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-            Contact
-          </a>
-        </div>
-        <div class="px-5 py-2">
-          <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-            Terms
-          </a>
-        </div>
-      </nav>
       <div class="flex justify-center mt-8 space-x-6">
         <a href="#" class="text-gray-400 hover:text-gray-500">
           <span class="sr-only">Facebook</span>
@@ -628,23 +433,14 @@
               clip-rule="evenodd"></path>
           </svg>
         </a>
-        <a href="#" class="text-gray-400 hover:text-gray-500">
-          <span class="sr-only">Dribbble</span>
-          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd"
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </a>
       </div>
       <p class="mt-8 text-base leading-6 text-center text-gray-400">
-        © 2021 SomeCompany, Inc. All rights reserved.
+        © 2022 ORMNicro, Inc. All rights reserved.
       </p>
     </div>
   </footer>
 
   <script src="js/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/line-clamp@0.4.2/src/index.min.js"></script>
 </body>
 
 </html>
