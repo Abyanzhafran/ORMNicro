@@ -46,10 +46,7 @@ const getAllNews = (req, res) => {
       res.status(404).send({ message: err.sqlMessage })
       throw err
     }
-    res.status(200).send({
-      status: 'success',
-      news: result
-    })
+    res.status(200).send(result)
   })
 }
 
