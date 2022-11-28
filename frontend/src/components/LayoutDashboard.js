@@ -2,7 +2,6 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import HomeIcon from '@mui/icons-material/Home';
-import Inventory2Icon from '@mui/icons-material/Inventory2';
 import GroupIcon from '@mui/icons-material/Group';
 import {
   Link,
@@ -10,25 +9,20 @@ import {
   Routes
 } from "react-router-dom";
 import NewsList from '../pages/NewsList';
-import ItulahPage from '../pages/ItulahPage';
+import EmployeeList from '../pages/EmployeeList';
 
 export default function LayoutDashboard() {
   const btnSidebar = [
     {
       icon: <HomeIcon />,
-      name: 'DAFTAR BERITA',
-      link: '/newsList'
-    },
-    {
-      icon: <Inventory2Icon />,
-      name: 'LOREM',
+      name: 'Daftar Berita',
       link: '/newsList'
     },
     {
       icon: <GroupIcon />,
-      name: 'LOREM',
-      link: '/itulahPage'
-    },
+      name: 'Daftar Karyawan',
+      link: '/employeeList'
+    }
   ];
 
   return (
@@ -57,7 +51,7 @@ export default function LayoutDashboard() {
           <main className="flex h-full w-full justify-center items-start bg-gray-200">
             <Routes>
               <Route path="/newsList" element={<NewsList />} />
-              <Route path="/itulahPage" element={<ItulahPage />} />
+              <Route path="/employeeList" element={<EmployeeList />} />
             </Routes>
           </main>
         </div>
