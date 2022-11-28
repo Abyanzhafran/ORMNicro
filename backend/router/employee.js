@@ -5,10 +5,11 @@ const {
   addEmployee,
   getEmployeeTest,
   getAllEmployee,
-  getEmployeeById
+  getEmployeeById,
+  deleteEmployeeById
 } = require('../controller/employeeController')
 
-// users routing
+// employees routing
 router.post('/', addEmployee)
 
 router.get('/test', getEmployeeTest)
@@ -18,6 +19,8 @@ router.post('/auth', auth)
 router.get('/', getAllEmployee)
 
 router.get('/:employeeId', getEmployeeById)
+
+router.delete('/:employeeId', deleteEmployeeById)
 
 
 module.exports = router

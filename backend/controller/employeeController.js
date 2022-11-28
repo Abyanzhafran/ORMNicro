@@ -2,7 +2,7 @@ const { v4: uuidv4 } = require('uuid');
 const db = require('../database')
 
 const getEmployeeTest = (req, res) => {
-  res.send('comment test')
+  res.send('emplyee test')
 }
 
 const auth = (req, res) => {
@@ -64,11 +64,10 @@ const getAllEmployee = (req, res) => {
     }
     res.status(200).send({
       status: 'success',
-      comments: result
+      employees: result
     })
   })
 }
-
 
 const getEmployeeById = (req, res) => {
   const { employeeId } = req.params
@@ -86,10 +85,29 @@ const getEmployeeById = (req, res) => {
   })
 }
 
+const deleteEmployeeById = (req, res) => {
+  const { employeeId } = req.params
+
+  let query = "DELETE FROM tbl_employee WHERE employeeId = ?"
+  db.query(query, [employeeId], (err, result) => {
+    if (err) {
+      res.status(404).send({
+        status: 'fail',
+        message: err.sqlMessage
+      })
+    }
+    res.status(200).send({
+      status: 'success',
+      message: 'Employee successfully deleted'
+    })
+  })
+}
+
 module.exports = {
   auth,
   getEmployeeTest,
   addEmployee,
   getAllEmployee,
-  getEmployeeById
+  getEmployeeById,
+  deleteEmployeeById
 }

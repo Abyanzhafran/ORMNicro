@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const employeeRouter = require('./router/employee')
+const newsRouter = require('./router/news')
 
 app.use(express.urlencoded({ extended: true }))
 
@@ -13,6 +14,7 @@ app.use(express.json())
 
 // use specific route handler
 app.use('/employee', employeeRouter)
+app.use('/news', newsRouter)
 
 // for testing
 app.get('/', (req, res) => {
