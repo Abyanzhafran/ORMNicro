@@ -3,7 +3,7 @@
   "name": "ORMNicro-news",
   "builds": [
     {
-      "src": "server.js",
+      "src": "package.json",
       "use": "@vercel/node"
     }
   ],
