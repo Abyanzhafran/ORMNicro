@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddIcon from '@mui/icons-material/Add';
 
-const newsList = () => {
+function newsList() {
   // const newsData = [
   //   {
   //     id: '1',

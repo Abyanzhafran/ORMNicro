@@ -16,12 +16,12 @@ export default function LayoutDashboard() {
     {
       icon: <HomeIcon />,
       name: 'Daftar Berita',
-      link: '/newsList'
+      link: '/dashboardAdmin/newsList'
     },
     {
       icon: <GroupIcon />,
       name: 'Daftar Karyawan',
-      link: '/employeeList'
+      link: '/dashboardAdmin/employeeList'
     }
   ];
 

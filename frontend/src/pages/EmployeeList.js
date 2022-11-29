@@ -1,4 +1,4 @@
-const employeeList = () => {
+function EmployeeList() {
   const employeeData = [
     {
       id: '1',
@@ -119,4 +119,4 @@ const employeeList = () => {
   );
 };
 
-export default employeeList;
+export default EmployeeList;
