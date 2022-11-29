@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddIcon from '@mui/icons-material/Add';
 
-function newsList() {
+function DashboardNewsList() {
   // const newsData = [
   //   {
   //     id: '1',
@@ -163,4 +163,4 @@ function newsList() {
   );
 };
 
-export default newsList;
+export default DashboardNewsList;

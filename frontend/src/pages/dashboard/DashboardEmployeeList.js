@@ -1,4 +1,4 @@
-function EmployeeList() {
+function DashboardEmployeeList() {
   const employeeData = [
     {
       id: '1',
@@ -119,4 +119,4 @@ function EmployeeList() {
   );
 };
 
-export default EmployeeList;
+export default DashboardEmployeeList;

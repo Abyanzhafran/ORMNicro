@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import OrmNewsBaseNavbar from "./OrmNewsBaseNavbar"
-import OrmNewsRead from '../pages/OrmNewsRead';
+import NewsBaseNavbar from "./NewsBaseNavbar"
+import NewsRead from '../pages/news/NewsRead';
+import NewsList from '../pages/news/NewsList';
 import {
-  Link,
   Route,
   Routes
 } from "react-router-dom";
@@ -20,10 +20,11 @@ export default function OrmNews() {
 
   return (
     <>
-      <OrmNewsBaseNavbar />
+      <NewsBaseNavbar />
       <main className="w-full h-full bg-yellow-200">
         <Routes>
-          <Route path="/newsRead" element={<OrmNewsRead />} />
+          <Route path="/" element={<NewsList />} />
+          <Route path="/newsRead/:newsId" element={<NewsRead />} />
         </Routes>
       </main>
     </>

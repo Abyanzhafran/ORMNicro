@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import LayoutDashboard from './components/LayoutDashboard';
-import LayoutOrmNews from './components/LayoutOrmNews';
-// import newsList from './pages/NewsList';
-// import employeeList from './pages/EmployeeList';
-import OrmNewsRead from './pages/OrmNewsRead';
+import DashboardNewsList from './pages/dashboard/DashboardNewsList';
+import DashboardEmployeeList from './pages/dashboard/DashboardEmployeeList';
+import LayoutNews from './components/LayoutOrmNews';
+import OrmNewsRead from './pages/news/NewsRead';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router,
@@ -19,11 +19,11 @@ root.render(
     <Router>
       <Routes>
         <Route path="dashboardAdmin" element={<LayoutDashboard />}>
-          <Route path="newsList" element={<newsList />} />
-          <Route path="employeeList" element={<employeeList />} />
+          <Route path="/dashboardAdmin/newsList" element={<DashboardNewsList />} />
+          <Route path="/dashboardAdmin/employeeList" element={<DashboardEmployeeList />} />
         </Route>
-        <Route path="ormNews" element={<LayoutOrmNews />}>
-          <Route path="newsRead" element={<OrmNewsRead />} />
+        <Route path="ormNews" element={<LayoutNews />}>
+          <Route path="/ormNews/newsRead/:newsId" element={<OrmNewsRead />} />
         </Route>
       </Routes>
     </Router>

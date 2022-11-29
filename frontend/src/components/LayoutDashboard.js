@@ -8,8 +8,8 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import NewsList from '../pages/NewsList';
-import EmployeeList from '../pages/EmployeeList';
+import DashboardNewsList from '../pages/dashboard/DashboardNewsList';
+import DashboardEmployeeList from '../pages/dashboard/DashboardEmployeeList';
 
 export default function LayoutDashboard() {
   const btnSidebar = [
@@ -50,8 +50,8 @@ export default function LayoutDashboard() {
           </div>
           <main className="flex h-full w-full justify-center items-start bg-gray-200">
             <Routes>
-              <Route path="/newsList" element={<NewsList />} />
-              <Route path="/employeeList" element={<EmployeeList />} />
+              <Route path="/newsList" element={<DashboardNewsList />} />
+              <Route path="/employeeList" element={<DashboardEmployeeList />} />
             </Routes>
           </main>
         </div>
