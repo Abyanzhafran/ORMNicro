@@ -6,7 +6,6 @@ import EastIcon from '@mui/icons-material/East';
 export default function CardNews() {
   const url = 'http://localhost:8080/news';
   const [news, setNews] = useState([]);
-  const [getNewsId, setGetNewsId] = useState('')
 
   useEffect(() => {
     axios.get(url).then((res) => {

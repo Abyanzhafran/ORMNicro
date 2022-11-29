@@ -21,12 +21,12 @@ export default function OrmNews() {
   return (
     <>
       <NewsBaseNavbar />
-      <main className="w-full h-full bg-yellow-200">
+      <div>
         <Routes>
           <Route path="/" element={<NewsList />} />
           <Route path="/newsRead/:newsId" element={<NewsRead />} />
         </Routes>
-      </main>
+      </div>
     </>
   )
 }

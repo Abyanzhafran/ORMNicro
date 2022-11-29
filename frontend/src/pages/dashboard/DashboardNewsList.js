@@ -4,39 +4,6 @@ import axios from 'axios';
 import AddIcon from '@mui/icons-material/Add';
 
 function DashboardNewsList() {
-  // const newsData = [
-  //   {
-  //     id: '1',
-  //     title: 'ORM news lorem',
-  //     content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-  //     createdAt: '28/2/2022',
-  //   },
-  //   {
-  //     id: '2',
-  //     title: 'ORM news lorem',
-  //     content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-  //     createdAt: '28/2/2022',
-  //   },
-  //   {
-  //     id: '3',
-  //     title: 'ORM news lorem',
-  //     content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-  //     createdAt: '28/2/2022',
-  //   },
-  //   {
-  //     id: '4',
-  //     title: 'ORM news lorem',
-  //     content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-  //     createdAt: '28/2/2022',
-  //   },
-  //   {
-  //     id: '5',
-  //     title: 'ORM news lorem',
-  //     content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-  //     createdAt: '28/2/2022',
-  //   },
-  // ];
-
   const url = 'http://localhost:8080/news';
   const [news, setNews] = useState([]);
   const [insertTitle, setInsertTitle] = useState('');
