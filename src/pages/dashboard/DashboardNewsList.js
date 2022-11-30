@@ -4,7 +4,7 @@ import axios from 'axios';
 import AddIcon from '@mui/icons-material/Add';
 
 function DashboardNewsList() {
-  const url = 'http://localhost:8080/news';
+  const url = 'https://orm-nicro-qbjl92t49-abyanzhafran.vercel.app/news';
   const [news, setNews] = useState([]);
   const [insertTitle, setInsertTitle] = useState('');
   const [insertContent, setInsertContent] = useState('');
@@ -112,7 +112,7 @@ function DashboardNewsList() {
       <input type="checkbox" id="my-modal-2" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
-          <span>Sure want to Delete ??</span>
+          <span className="font-bold text-2xl">Hapus berita ?</span>
           <div className="modal-action">
             <label
               for="my-modal-2"

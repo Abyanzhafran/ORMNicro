@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import EastIcon from '@mui/icons-material/East';
 
 export default function CardNews() {
-  const url = 'http://localhost:8080/news';
+  const url = 'https://orm-nicro-qbjl92t49-abyanzhafran.vercel.app/news';
   const [news, setNews] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function CardNews() {
                 to={`/ormNews/newsRead/${news.newsId}`}
                 className="btn btn-primary gap-2 btn-sm"
               >
-                {news.newsId}
+                Baca lebih
                 <EastIcon />
               </Link>
             </div>

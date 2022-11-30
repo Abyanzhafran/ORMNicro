@@ -101,7 +101,7 @@ function DashboardEmployeeList() {
       <input type="checkbox" id="my-modal-2" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
-          <span>Sure want to Delete ??</span>
+          <span className="font-bold text-2xl">Hapus Karyawan ?</span>
           <div className="modal-action">
             <label
               for="my-modal-2"

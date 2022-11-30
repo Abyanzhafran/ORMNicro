@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from "react-router-dom"
 
 function OrmNewsRead() {
-  const url = 'http://localhost:8080/news';
+  const url = 'https://orm-nicro-qbjl92t49-abyanzhafran.vercel.app/news';
   const [getNewsId, setGetNewsId] = useState('')
 
   var params = useParams()
@@ -17,7 +17,7 @@ function OrmNewsRead() {
 
   return (
     <>
-      <div className="w-screen h-screen">
+      <div className="w-full h-screen">
         <div className="w-full h-full bg-gray-50">
           <div className="flex flex-col justify-center items-center gap-8 mx-6 md:mx-32 lg:mx-48 py-14">
             <div className="">
